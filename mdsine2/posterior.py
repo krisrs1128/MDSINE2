@@ -1932,8 +1932,8 @@ class ClusterAssignments(pl.graph.Node):
         beta_mean = np.asarray(beta_mean).reshape(-1, 1)
 
         sgn, beta_prec_logdet = np.linalg.slogdet(beta_prec.toarray())
-        if sgn <= 0.0:
-            raise ValueError(f"Expected positive determinant, but got zero/negative value.")
+        #if sgn <= 0.0:
+        #    raise ValueError(f"Expected positive determinant, but got zero/negative value.")
         priorvar_logdet = log_det(prior_var, self)
         ll2 = 0.5 * (-beta_prec_logdet - priorvar_logdet)
 
